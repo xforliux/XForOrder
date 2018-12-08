@@ -1,0 +1,16 @@
+<!--pages/shop/listshop/listshop.wxml-->
+<view class='page'>
+  <!-- 每一条文字 -->
+  <scroll-view scroll-y='true' class='lists'>
+    <block wx:for="{{shopList}}" wx:key="*this.id">
+      <view class="list-i" bindtap="edit" data-id="{{item.sid}}">
+        <view class="content">店铺名称：{{item.name}}</view>
+        <view class='time'>创建时间：{{item.createTime}}</view>
+      </view>
+    </block>
+  </scroll-view>
+  <!-- 添加一条文字的按钮 -->
+  <view class='add' bindtap='add'>
+    <image src='../../img/edit.png'></image>
+  </view>
+</view>
